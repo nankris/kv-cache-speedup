@@ -1,0 +1,100 @@
+Loading model
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 6165.12it/s]
+/workspace/work/tig/121-kv-cache-speedup/scripts/benchmark.py:25: DeprecationWarning: torch.ao.quantization is deprecated and will be removed in 2.10. 
+For migrations of users: 
+1. Eager mode quantization (torch.ao.quantization.quantize, torch.ao.quantization.quantize_dynamic), please migrate to use torchao eager mode quantize_ API instead 
+2. FX graph mode quantization (torch.ao.quantization.quantize_fx.prepare_fx,torch.ao.quantization.quantize_fx.convert_fx, please migrate to use torchao pt2e quantization API instead (prepare_pt2e, convert_pt2e) 
+3. pt2e quantization has been migrated to torchao (https://github.com/pytorch/ao/tree/main/torchao/quantization/pt2e) 
+see https://github.com/pytorch/ao/issues/2259 for more details
+  replacement=torch.ao.quantization.quantize_dynamic(wrapper,{torch.nn.Linear},dtype=torch.qint8,inplace=True)[0]
+/workspace/tools/mlenv/lib/python3.12/site-packages/torch/ao/nn/quantized/modules/utils.py:72: UserWarning: torch.quantize_per_tensor, torch.quantize_per_channel and other quantized tensor creation functions that produce tensors with dtype torch.quint8, torch.qint8, and torch.qint32 are deprecated and will be removed in a future PyTorch release. Please see https://github.com/pytorch/pytorch/issues/184982 for more information. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/quantized/Quantizer.cpp:111.)
+  qweight = torch.quantize_per_tensor(
+Quantization finished before float activations
+Quantized linear layers
+Loaded RSS KiB 3220136
+Warmup True
+[W1016 09:44:55.950881228 qlinear_dynamic.cpp:251] Warning: Currently, qnnpack incorrectly ignores reduce_range when it is set to true; this may change in a future release. (function operator())
+Warmup done True
+Warmup False
+Warmup done False
+Memory cache 64 [(0, [1, 8, 64, 128]), (1, [1, 8, 64, 128]), (2, [1, 8, 64, 128]), (3, [1, 8, 64, 128]), (4, [1, 8, 64, 128]), (5, [1, 8, 64, 128]), (6, [1, 8, 64, 128]), (7, [1, 8, 64, 128]), (8, [1, 8, 64, 128]), (9, [1, 8, 64, 128]), (10, [1, 8, 64, 128]), (11, [1, 8, 64, 128]), (12, [1, 8, 64, 128]), (13, [1, 8, 64, 128]), (14, [1, 8, 64, 128]), (15, [1, 8, 64, 128]), (16, [1, 8, 64, 128]), (17, [1, 8, 64, 128]), (18, [1, 8, 64, 128]), (19, [1, 8, 64, 128]), (20, [1, 8, 64, 128]), (21, [1, 8, 64, 128]), (22, [1, 8, 64, 128]), (23, [1, 8, 64, 128]), (24, [1, 8, 64, 128]), (25, [1, 8, 64, 128]), (26, [1, 8, 64, 128]), (27, [1, 8, 64, 128])]
+Memory cache 512 [(0, [1, 8, 512, 128]), (1, [1, 8, 512, 128]), (2, [1, 8, 512, 128]), (3, [1, 8, 512, 128]), (4, [1, 8, 512, 128]), (5, [1, 8, 512, 128]), (6, [1, 8, 512, 128]), (7, [1, 8, 512, 128]), (8, [1, 8, 512, 128]), (9, [1, 8, 512, 128]), (10, [1, 8, 512, 128]), (11, [1, 8, 512, 128]), (12, [1, 8, 512, 128]), (13, [1, 8, 512, 128]), (14, [1, 8, 512, 128]), (15, [1, 8, 512, 128]), (16, [1, 8, 512, 128]), (17, [1, 8, 512, 128]), (18, [1, 8, 512, 128]), (19, [1, 8, 512, 128]), (20, [1, 8, 512, 128]), (21, [1, 8, 512, 128]), (22, [1, 8, 512, 128]), (23, [1, 8, 512, 128]), (24, [1, 8, 512, 128]), (25, [1, 8, 512, 128]), (26, [1, 8, 512, 128]), (27, [1, 8, 512, 128])]
+{"prompt_tokens": 64, "output_tokens": 32, "repeat": 0, "use_cache": true, "seconds": 12.63420874700023, "tokens_per_second": 2.532806022189386, "generated_tokens": 32, "output_sha256": "73596757fdfaff5bb94d7584364f168966ca311bd9679e8e2be4aac691b28bc7", "utc": "2026-10-16T09:45:53Z"}
+{"prompt_tokens": 64, "output_tokens": 32, "repeat": 0, "use_cache": false, "seconds": 75.16570618599962, "tokens_per_second": 0.4257260607758425, "generated_tokens": 32, "output_sha256": "f49922967f8f3196475f6f45ddd905f6564cc4259ed5482b4e4511d637c82b69", "utc": "2026-10-16T09:47:08Z"}
+Traceback (most recent call last):
+  File "/workspace/work/tig/121-kv-cache-speedup/scripts/benchmark.py", line 78, in <module>
+    started=time.perf_counter(); out=generate(prompts[p],n,cache); elapsed=time.perf_counter()-started
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/work/tig/121-kv-cache-speedup/scripts/benchmark.py", line 49, in generate
+    return model.generate(input_ids=ids,attention_mask=torch.ones_like(ids),max_new_tokens=n,min_new_tokens=n,do_sample=False,use_cache=cache,eos_token_id=None,pad_token_id=tok.pad_token_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/transformers/generation/utils.py", line 2982, in generate
+    result = decoding_method(
+             ^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/transformers/generation/utils.py", line 3210, in _sample
+    outputs = model_forward(**model_inputs, return_dict=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/transformers/utils/generic.py", line 943, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 469, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+                                       ^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/transformers/utils/generic.py", line 1081, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/transformers/utils/output_capturing.py", line 287, in wrapper
+    outputs = func(self, *args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 405, in forward
+    hidden_states = decoder_layer(
+                    ^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/transformers/modeling_layers.py", line 110, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 313, in forward
+    hidden_states = self.mlp(hidden_states)
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 81, in forward
+    down_proj = self.down_proj(self.act_fn(self.gate_proj(x)) * self.up_proj(x))
+                                                                ^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/torch/ao/nn/quantized/dynamic/modules/linear.py", line 58, in forward
+    Y = torch.ops.quantized.linear_dynamic(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/torch/_ops.py", line 1350, in __call__
+    return self._op(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

@@ -1,0 +1,62 @@
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights:   5%|▌         | 17/311 [00:00<00:01, 155.72it/s]Loading weights:  12%|█▏        | 37/311 [00:00<00:01, 168.94it/s]Loading weights:  17%|█▋        | 54/311 [00:00<00:01, 138.03it/s]Loading weights:  23%|██▎       | 70/311 [00:00<00:01, 136.40it/s]Loading weights:  28%|██▊       | 86/311 [00:00<00:01, 139.41it/s]Loading weights:  32%|███▏      | 101/311 [00:00<00:01, 139.59it/s]Loading weights:  37%|███▋      | 116/311 [00:00<00:01, 127.97it/s]Loading weights:  42%|████▏     | 131/311 [00:00<00:01, 129.28it/s]Loading weights:  47%|████▋     | 145/311 [00:01<00:01, 128.62it/s]Loading weights:  51%|█████     | 158/311 [00:01<00:01, 126.34it/s]Loading weights:  55%|█████▍    | 171/311 [00:01<00:01, 104.01it/s]Loading weights:  59%|█████▉    | 185/311 [00:01<00:01, 97.66it/s] Loading weights:  63%|██████▎   | 196/311 [00:01<00:01, 89.09it/s]Loading weights:  66%|██████▌   | 206/311 [00:01<00:01, 71.95it/s]Loading weights:  69%|██████▉   | 214/311 [00:02<00:01, 62.71it/s]Loading weights:  72%|███████▏  | 223/311 [00:02<00:01, 65.03it/s]Loading weights:  74%|███████▍  | 230/311 [00:02<00:01, 54.08it/s]Loading weights:  76%|███████▌  | 236/311 [00:02<00:01, 54.50it/s]Loading weights:  79%|███████▉  | 246/311 [00:02<00:01, 59.15it/s]Loading weights:  81%|████████▏ | 253/311 [00:02<00:00, 61.49it/s]Loading weights:  84%|████████▎ | 260/311 [00:02<00:00, 55.88it/s]Loading weights:  86%|████████▌ | 266/311 [00:03<00:00, 54.17it/s]Loading weights:  92%|█████████▏| 287/311 [00:03<00:00, 86.44it/s]Loading weights:  95%|█████████▌| 296/311 [00:03<00:00, 82.25it/s]Loading weights:  98%|█████████▊| 305/311 [00:03<00:00, 79.25it/s]Loading weights: 100%|██████████| 311/311 [00:03<00:00, 90.29it/s]
+{'dtype': 'torch.float32', 'prompt_tokens': 64, 'repeat': 0, 'seconds': 3.714586987999951}
+{'dtype': 'torch.float32', 'prompt_tokens': 64, 'repeat': 1, 'seconds': 3.9646406499999785}
+{'dtype': 'torch.float32', 'prompt_tokens': 512, 'repeat': 0, 'seconds': 18.47743867400004}
+{'dtype': 'torch.float32', 'prompt_tokens': 512, 'repeat': 1, 'seconds': 19.000158798999905}
+{'dtype': 'torch.bfloat16', 'prompt_tokens': 64, 'repeat': 0, 'seconds': 12.003482219000034}
+{'dtype': 'torch.bfloat16', 'prompt_tokens': 64, 'repeat': 1, 'seconds': 14.770411343000092}
+Traceback (most recent call last):
+  File "/workspace/work/tig/121-kv-cache-speedup/scripts/precision_pilot.py", line 19, in <module>
+    m(input_ids=ids,use_cache=False,logits_to_keep=1)
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/transformers/utils/generic.py", line 943, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 469, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+                                       ^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/transformers/utils/generic.py", line 1081, in wrapper
+    output = func(self, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/transformers/utils/output_capturing.py", line 287, in wrapper
+    outputs = func(self, *args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 405, in forward
+    hidden_states = decoder_layer(
+                    ^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/transformers/modeling_layers.py", line 110, in __call__
+    return super().__call__(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 299, in forward
+    hidden_states, _ = self.self_attn(
+                       ^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/transformers/models/qwen3/modeling_qwen3.py", line 258, in forward
+    attn_output, attn_weights = attention_interface(
+                                ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/tools/mlenv/lib/python3.12/site-packages/transformers/integrations/sdpa_attention.py", line 170, in sdpa_attention_forward
+    attn_output = torch.nn.functional.scaled_dot_product_attention(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

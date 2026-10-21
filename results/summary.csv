@@ -1,0 +1,17 @@
+prompt_tokens,output_tokens,use_cache,completed_repeats,mean_seconds,mean_tokens_per_second,ci95
+64,32,True,1,9.292797291999989,3.443527174271654,not estimable
+64,32,False,1,57.72147459600001,0.5543863912689705,not estimable
+64,64,True,0,,,not estimable
+64,64,False,0,,,not estimable
+64,128,True,0,,,not estimable
+64,128,False,0,,,not estimable
+64,256,True,0,,,not estimable
+64,256,False,0,,,not estimable
+512,32,True,1,10.78794504199999,2.9662739173602133,not estimable
+512,32,False,0,,,not estimable
+512,64,True,0,,,not estimable
+512,64,False,0,,,not estimable
+512,128,True,0,,,not estimable
+512,128,False,0,,,not estimable
+512,256,True,0,,,not estimable
+512,256,False,0,,,not estimable

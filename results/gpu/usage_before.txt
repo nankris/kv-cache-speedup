@@ -1,0 +1,1 @@
+Initial balance before session creation: 163.67 CU; usage rate 0.00/hr; active assignments 0. Recorded from first colab usage call on 2026-10-17.

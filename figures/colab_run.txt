@@ -1,0 +1,392 @@
+Execution evidence for b6-121. First model launch: 17 BF16 pilot rows; second launch: 60 FP32 publication rows. TensorFlow warnings are from an imported optional library; the mechanism hook confirms model inputs on cuda:0.
+
+Sat Oct 17 05:38:41 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.82.07              Driver Version: 580.82.07      CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA L4                      Off |   00000000:00:03.0 Off |                    0 |
+| N/A   41C    P8             12W /   72W |       0MiB /  23034MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+`torch_dtype` is deprecated! Use `dtype` instead!
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792215526.836214    1258 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1792215526.910619    1258 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792215529.384336    1258 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1792215529.384980    1258 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+0.6B {"prompt_tokens": 64, "output_tokens": 32, "repeat": 0, "use_cache": true, "seconds": 1.1951748189999876, "tokens_per_second": 26.774325806809298, "generated_tokens": 32, "output_sha256": "fd0093ca65e19a38f49d37f79ca3c255757c99e6b14f8c47e4e79f610af68729", "utc": "2026-10-17T05:39:03Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 32, "repeat": 0, "use_cache": false, "seconds": 1.2143371210000282, "tokens_per_second": 26.35182557348443, "generated_tokens": 32, "output_sha256": "fd0093ca65e19a38f49d37f79ca3c255757c99e6b14f8c47e4e79f610af68729", "utc": "2026-10-17T05:39:05Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 32, "repeat": 0, "use_cache": true, "seconds": 1.2034016229999906, "tokens_per_second": 26.59128871725001, "generated_tokens": 32, "output_sha256": "e0fb5b2013a3e150939f16ec90f089216527c75563c3e46fc738e5e9784b32b0", "utc": "2026-10-17T05:39:06Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 32, "repeat": 0, "use_cache": false, "seconds": 1.2259004050000044, "tokens_per_second": 26.103262442432985, "generated_tokens": 32, "output_sha256": "e0fb5b2013a3e150939f16ec90f089216527c75563c3e46fc738e5e9784b32b0", "utc": "2026-10-17T05:39:08Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 64, "repeat": 0, "use_cache": true, "seconds": 2.3949225300000307, "tokens_per_second": 26.723202608144145, "generated_tokens": 64, "output_sha256": "b1781dd56f44e671c79b7ab2d6bd46fada29df133ad891a45645b886a2a14767", "utc": "2026-10-17T05:39:11Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 64, "repeat": 0, "use_cache": false, "seconds": 2.401801880999983, "tokens_per_second": 26.646660786756396, "generated_tokens": 64, "output_sha256": "b1781dd56f44e671c79b7ab2d6bd46fada29df133ad891a45645b886a2a14767", "utc": "2026-10-17T05:39:13Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 64, "repeat": 0, "use_cache": true, "seconds": 2.397825664000038, "tokens_per_second": 26.690847863074243, "generated_tokens": 64, "output_sha256": "62f5708eba627aa237fb8e78f9b9a4ac194a66289f62b8aaf1e2a6560481f0e8", "utc": "2026-10-17T05:39:16Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 64, "repeat": 0, "use_cache": false, "seconds": 2.449003972000014, "tokens_per_second": 26.133073172492033, "generated_tokens": 64, "output_sha256": "62f5708eba627aa237fb8e78f9b9a4ac194a66289f62b8aaf1e2a6560481f0e8", "utc": "2026-10-17T05:39:19Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 128, "repeat": 0, "use_cache": true, "seconds": 4.813092850000032, "tokens_per_second": 26.594126477323027, "generated_tokens": 128, "output_sha256": "fd64e1c1f59aee58726d4e113a08cbe52a903bc6bd0beabe267539291d697944", "utc": "2026-10-17T05:39:24Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 128, "repeat": 0, "use_cache": false, "seconds": 4.8280800470000145, "tokens_per_second": 26.51157370092369, "generated_tokens": 128, "output_sha256": "fd64e1c1f59aee58726d4e113a08cbe52a903bc6bd0beabe267539291d697944", "utc": "2026-10-17T05:39:29Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 128, "repeat": 0, "use_cache": true, "seconds": 4.797417344999985, "tokens_per_second": 26.68102247418718, "generated_tokens": 128, "output_sha256": "6a5c1f19a832eb47e56b5979fceaac475ec5f19b50811161a5007d6d446f4d01", "utc": "2026-10-17T05:39:34Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 128, "repeat": 0, "use_cache": false, "seconds": 4.895364565000023, "tokens_per_second": 26.14718440280237, "generated_tokens": 128, "output_sha256": "6a5c1f19a832eb47e56b5979fceaac475ec5f19b50811161a5007d6d446f4d01", "utc": "2026-10-17T05:39:40Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 256, "repeat": 0, "use_cache": true, "seconds": 9.597962731000052, "tokens_per_second": 26.672326948421716, "generated_tokens": 256, "output_sha256": "727c6da07ff3b4e5307faea271157b521bdd1a89f4865158e9befcea1f7ee4cd", "utc": "2026-10-17T05:39:50Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 256, "repeat": 0, "use_cache": false, "seconds": 9.662180787000011, "tokens_per_second": 26.495053823090892, "generated_tokens": 256, "output_sha256": "727c6da07ff3b4e5307faea271157b521bdd1a89f4865158e9befcea1f7ee4cd", "utc": "2026-10-17T05:40:00Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 256, "repeat": 0, "use_cache": true, "seconds": 9.53965795199997, "tokens_per_second": 26.83534370813894, "generated_tokens": 256, "output_sha256": "9fbf321f16981b1d0bccf2f809c3cb13ce0f4aa230675b2c20b7a4ab8d0bc25f", "utc": "2026-10-17T05:40:09Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 256, "repeat": 0, "use_cache": false, "seconds": 9.750009618000036, "tokens_per_second": 26.256384355496856, "generated_tokens": 256, "output_sha256": "2df8496fb33612bd17420a30bc6ceb181a912cf06a0f9737fb62daefc3b07a58", "utc": "2026-10-17T05:40:20Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 512, "repeat": 0, "use_cache": true, "seconds": 19.276659656999982, "tokens_per_second": 26.560618338980536, "generated_tokens": 512, "output_sha256": "c02e696b344159311a98573c0c497958f019a2523e8905eeabf6020c76c52708", "utc": "2026-10-17T05:40:39Z"}
+Sat Oct 17 05:41:08 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.82.07              Driver Version: 580.82.07      CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA L4                      Off |   00000000:00:03.0 Off |                    0 |
+| N/A   60C    P8             18W /   72W |       0MiB /  23034MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+`torch_dtype` is deprecated! Use `dtype` instead!
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792215670.344264    1991 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1792215670.418872    1991 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792215672.886105    1991 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1792215672.886680    1991 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+0.6B {"prompt_tokens": 64, "output_tokens": 32, "repeat": 0, "use_cache": true, "seconds": 1.2159241579999502, "tokens_per_second": 26.31743089358153, "generated_tokens": 32, "output_sha256": "fd0093ca65e19a38f49d37f79ca3c255757c99e6b14f8c47e4e79f610af68729", "utc": "2026-10-17T05:41:21Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 32, "repeat": 0, "use_cache": false, "seconds": 1.3321288580000328, "tokens_per_second": 24.021700158979073, "generated_tokens": 32, "output_sha256": "fd0093ca65e19a38f49d37f79ca3c255757c99e6b14f8c47e4e79f610af68729", "utc": "2026-10-17T05:41:23Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 32, "repeat": 0, "use_cache": true, "seconds": 1.2451030070000115, "tokens_per_second": 25.70068485907986, "generated_tokens": 32, "output_sha256": "e0fb5b2013a3e150939f16ec90f089216527c75563c3e46fc738e5e9784b32b0", "utc": "2026-10-17T05:41:24Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 32, "repeat": 0, "use_cache": false, "seconds": 2.91268557799998, "tokens_per_second": 10.986424433073571, "generated_tokens": 32, "output_sha256": "e0fb5b2013a3e150939f16ec90f089216527c75563c3e46fc738e5e9784b32b0", "utc": "2026-10-17T05:41:28Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 64, "repeat": 0, "use_cache": true, "seconds": 2.424341276000007, "tokens_per_second": 26.3989235482537, "generated_tokens": 64, "output_sha256": "b1781dd56f44e671c79b7ab2d6bd46fada29df133ad891a45645b886a2a14767", "utc": "2026-10-17T05:41:30Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 64, "repeat": 0, "use_cache": false, "seconds": 2.6559173019999776, "tokens_per_second": 24.09713583770333, "generated_tokens": 64, "output_sha256": "b1781dd56f44e671c79b7ab2d6bd46fada29df133ad891a45645b886a2a14767", "utc": "2026-10-17T05:41:33Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 64, "repeat": 0, "use_cache": true, "seconds": 2.447863030999997, "tokens_per_second": 26.145253712931325, "generated_tokens": 64, "output_sha256": "62f5708eba627aa237fb8e78f9b9a4ac194a66289f62b8aaf1e2a6560481f0e8", "utc": "2026-10-17T05:41:36Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 64, "repeat": 0, "use_cache": false, "seconds": 6.006551860000002, "tokens_per_second": 10.655031620754205, "generated_tokens": 64, "output_sha256": "62f5708eba627aa237fb8e78f9b9a4ac194a66289f62b8aaf1e2a6560481f0e8", "utc": "2026-10-17T05:41:43Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 128, "repeat": 0, "use_cache": true, "seconds": 4.905630293999991, "tokens_per_second": 26.092467701154536, "generated_tokens": 128, "output_sha256": "fd64e1c1f59aee58726d4e113a08cbe52a903bc6bd0beabe267539291d697944", "utc": "2026-10-17T05:41:48Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 128, "repeat": 0, "use_cache": false, "seconds": 5.4363503820000005, "tokens_per_second": 23.545207907094017, "generated_tokens": 128, "output_sha256": "fd64e1c1f59aee58726d4e113a08cbe52a903bc6bd0beabe267539291d697944", "utc": "2026-10-17T05:41:54Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 128, "repeat": 0, "use_cache": true, "seconds": 4.956858640999997, "tokens_per_second": 25.822806190449942, "generated_tokens": 128, "output_sha256": "6a5c1f19a832eb47e56b5979fceaac475ec5f19b50811161a5007d6d446f4d01", "utc": "2026-10-17T05:41:59Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 128, "repeat": 0, "use_cache": false, "seconds": 13.220247900000004, "tokens_per_second": 9.682117988120325, "generated_tokens": 128, "output_sha256": "6a5c1f19a832eb47e56b5979fceaac475ec5f19b50811161a5007d6d446f4d01", "utc": "2026-10-17T05:42:13Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 256, "repeat": 0, "use_cache": true, "seconds": 9.79992722899999, "tokens_per_second": 26.122642956209265, "generated_tokens": 256, "output_sha256": "727c6da07ff3b4e5307faea271157b521bdd1a89f4865158e9befcea1f7ee4cd", "utc": "2026-10-17T05:42:23Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 256, "repeat": 0, "use_cache": false, "seconds": 11.401631407000025, "tokens_per_second": 22.452927205033916, "generated_tokens": 256, "output_sha256": "727c6da07ff3b4e5307faea271157b521bdd1a89f4865158e9befcea1f7ee4cd", "utc": "2026-10-17T05:42:34Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 256, "repeat": 0, "use_cache": true, "seconds": 9.790483734000077, "tokens_per_second": 26.147839775369977, "generated_tokens": 256, "output_sha256": "824c20bc252d7b569f753a4ad61514fbf0dda23241908b433023c024694c1731", "utc": "2026-10-17T05:42:45Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 256, "repeat": 0, "use_cache": false, "seconds": 31.74422421500003, "tokens_per_second": 8.064459167946302, "generated_tokens": 256, "output_sha256": "824c20bc252d7b569f753a4ad61514fbf0dda23241908b433023c024694c1731", "utc": "2026-10-17T05:43:17Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 512, "repeat": 0, "use_cache": true, "seconds": 19.54889975499998, "tokens_per_second": 26.19073228758293, "generated_tokens": 512, "output_sha256": "c02e696b344159311a98573c0c497958f019a2523e8905eeabf6020c76c52708", "utc": "2026-10-17T05:43:37Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 512, "repeat": 0, "use_cache": false, "seconds": 31.612634960000037, "tokens_per_second": 16.19605580641543, "generated_tokens": 512, "output_sha256": "c02e696b344159311a98573c0c497958f019a2523e8905eeabf6020c76c52708", "utc": "2026-10-17T05:44:08Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 512, "repeat": 0, "use_cache": true, "seconds": 19.679031365000014, "tokens_per_second": 26.01754072665454, "generated_tokens": 512, "output_sha256": "b56469024ca07ec5dbf9de28170eed41766ca768d0ee8dbf723c78cf2082ef0c", "utc": "2026-10-17T05:44:28Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 512, "repeat": 0, "use_cache": false, "seconds": 79.59705371099994, "tokens_per_second": 6.432398890780099, "generated_tokens": 512, "output_sha256": "b56469024ca07ec5dbf9de28170eed41766ca768d0ee8dbf723c78cf2082ef0c", "utc": "2026-10-17T05:45:48Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 32, "repeat": 1, "use_cache": false, "seconds": 1.3806946400000015, "tokens_per_second": 23.17673949976366, "generated_tokens": 32, "output_sha256": "fd0093ca65e19a38f49d37f79ca3c255757c99e6b14f8c47e4e79f610af68729", "utc": "2026-10-17T05:45:50Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 32, "repeat": 1, "use_cache": true, "seconds": 1.2359411869999803, "tokens_per_second": 25.89119962712312, "generated_tokens": 32, "output_sha256": "fd0093ca65e19a38f49d37f79ca3c255757c99e6b14f8c47e4e79f610af68729", "utc": "2026-10-17T05:45:52Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 32, "repeat": 1, "use_cache": false, "seconds": 2.9986911940000027, "tokens_per_second": 10.671322230187592, "generated_tokens": 32, "output_sha256": "e0fb5b2013a3e150939f16ec90f089216527c75563c3e46fc738e5e9784b32b0", "utc": "2026-10-17T05:45:55Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 32, "repeat": 1, "use_cache": true, "seconds": 1.2643866539999635, "tokens_per_second": 25.308713832723612, "generated_tokens": 32, "output_sha256": "e0fb5b2013a3e150939f16ec90f089216527c75563c3e46fc738e5e9784b32b0", "utc": "2026-10-17T05:45:57Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 64, "repeat": 1, "use_cache": false, "seconds": 2.6999043920000076, "tokens_per_second": 23.704543090353926, "generated_tokens": 64, "output_sha256": "b1781dd56f44e671c79b7ab2d6bd46fada29df133ad891a45645b886a2a14767", "utc": "2026-10-17T05:46:00Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 64, "repeat": 1, "use_cache": true, "seconds": 2.4568678749999435, "tokens_per_second": 26.049426854100354, "generated_tokens": 64, "output_sha256": "b1781dd56f44e671c79b7ab2d6bd46fada29df133ad891a45645b886a2a14767", "utc": "2026-10-17T05:46:03Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 64, "repeat": 1, "use_cache": false, "seconds": 6.1287013830000205, "tokens_per_second": 10.442669009380218, "generated_tokens": 64, "output_sha256": "62f5708eba627aa237fb8e78f9b9a4ac194a66289f62b8aaf1e2a6560481f0e8", "utc": "2026-10-17T05:46:09Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 64, "repeat": 1, "use_cache": true, "seconds": 2.4913525270000036, "tokens_per_second": 25.688857480585646, "generated_tokens": 64, "output_sha256": "62f5708eba627aa237fb8e78f9b9a4ac194a66289f62b8aaf1e2a6560481f0e8", "utc": "2026-10-17T05:46:12Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 128, "repeat": 1, "use_cache": false, "seconds": 5.353739886999961, "tokens_per_second": 23.908520529884484, "generated_tokens": 128, "output_sha256": "fd64e1c1f59aee58726d4e113a08cbe52a903bc6bd0beabe267539291d697944", "utc": "2026-10-17T05:46:18Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 128, "repeat": 1, "use_cache": true, "seconds": 4.95940823300009, "tokens_per_second": 25.809530892876122, "generated_tokens": 128, "output_sha256": "fd64e1c1f59aee58726d4e113a08cbe52a903bc6bd0beabe267539291d697944", "utc": "2026-10-17T05:46:23Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 128, "repeat": 1, "use_cache": false, "seconds": 13.589848841000048, "tokens_per_second": 9.41879497686751, "generated_tokens": 128, "output_sha256": "6a5c1f19a832eb47e56b5979fceaac475ec5f19b50811161a5007d6d446f4d01", "utc": "2026-10-17T05:46:37Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 128, "repeat": 1, "use_cache": true, "seconds": 4.88288513100008, "tokens_per_second": 26.2140100710876, "generated_tokens": 128, "output_sha256": "6a5c1f19a832eb47e56b5979fceaac475ec5f19b50811161a5007d6d446f4d01", "utc": "2026-10-17T05:46:42Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 256, "repeat": 1, "use_cache": false, "seconds": 11.403355813999951, "tokens_per_second": 22.449531890051844, "generated_tokens": 256, "output_sha256": "727c6da07ff3b4e5307faea271157b521bdd1a89f4865158e9befcea1f7ee4cd", "utc": "2026-10-17T05:46:54Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 256, "repeat": 1, "use_cache": true, "seconds": 9.803669899000056, "tokens_per_second": 26.112670320132995, "generated_tokens": 256, "output_sha256": "727c6da07ff3b4e5307faea271157b521bdd1a89f4865158e9befcea1f7ee4cd", "utc": "2026-10-17T05:47:04Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 256, "repeat": 1, "use_cache": false, "seconds": 31.291872283999965, "tokens_per_second": 8.181038119949662, "generated_tokens": 256, "output_sha256": "824c20bc252d7b569f753a4ad61514fbf0dda23241908b433023c024694c1731", "utc": "2026-10-17T05:47:35Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 256, "repeat": 1, "use_cache": true, "seconds": 9.862620120999964, "tokens_per_second": 25.956591337722976, "generated_tokens": 256, "output_sha256": "824c20bc252d7b569f753a4ad61514fbf0dda23241908b433023c024694c1731", "utc": "2026-10-17T05:47:46Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 512, "repeat": 1, "use_cache": false, "seconds": 31.497429226999998, "tokens_per_second": 16.255294878513673, "generated_tokens": 512, "output_sha256": "c02e696b344159311a98573c0c497958f019a2523e8905eeabf6020c76c52708", "utc": "2026-10-17T05:48:18Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 512, "repeat": 1, "use_cache": true, "seconds": 19.545724019999966, "tokens_per_second": 26.194987685086577, "generated_tokens": 512, "output_sha256": "c02e696b344159311a98573c0c497958f019a2523e8905eeabf6020c76c52708", "utc": "2026-10-17T05:48:37Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 512, "repeat": 1, "use_cache": false, "seconds": 79.66978708800002, "tokens_per_second": 6.426526525475278, "generated_tokens": 512, "output_sha256": "b56469024ca07ec5dbf9de28170eed41766ca768d0ee8dbf723c78cf2082ef0c", "utc": "2026-10-17T05:49:57Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 512, "repeat": 1, "use_cache": true, "seconds": 19.62042271400003, "tokens_per_second": 26.095258367428833, "generated_tokens": 512, "output_sha256": "b56469024ca07ec5dbf9de28170eed41766ca768d0ee8dbf723c78cf2082ef0c", "utc": "2026-10-17T05:50:17Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 32, "repeat": 2, "use_cache": true, "seconds": 1.2482911329999524, "tokens_per_second": 25.635045506648822, "generated_tokens": 32, "output_sha256": "fd0093ca65e19a38f49d37f79ca3c255757c99e6b14f8c47e4e79f610af68729", "utc": "2026-10-17T05:50:19Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 32, "repeat": 2, "use_cache": false, "seconds": 1.3687503130000778, "tokens_per_second": 23.378990087579385, "generated_tokens": 32, "output_sha256": "fd0093ca65e19a38f49d37f79ca3c255757c99e6b14f8c47e4e79f610af68729", "utc": "2026-10-17T05:50:21Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 32, "repeat": 2, "use_cache": true, "seconds": 1.2700234899999714, "tokens_per_second": 25.19638435978906, "generated_tokens": 32, "output_sha256": "e0fb5b2013a3e150939f16ec90f089216527c75563c3e46fc738e5e9784b32b0", "utc": "2026-10-17T05:50:22Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 32, "repeat": 2, "use_cache": false, "seconds": 3.0023427940000147, "tokens_per_second": 10.658343232474953, "generated_tokens": 32, "output_sha256": "e0fb5b2013a3e150939f16ec90f089216527c75563c3e46fc738e5e9784b32b0", "utc": "2026-10-17T05:50:26Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 64, "repeat": 2, "use_cache": true, "seconds": 2.450907356000016, "tokens_per_second": 26.112778128199302, "generated_tokens": 64, "output_sha256": "b1781dd56f44e671c79b7ab2d6bd46fada29df133ad891a45645b886a2a14767", "utc": "2026-10-17T05:50:28Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 64, "repeat": 2, "use_cache": false, "seconds": 2.70538340600001, "tokens_per_second": 23.656536022975725, "generated_tokens": 64, "output_sha256": "b1781dd56f44e671c79b7ab2d6bd46fada29df133ad891a45645b886a2a14767", "utc": "2026-10-17T05:50:32Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 64, "repeat": 2, "use_cache": true, "seconds": 2.4976012299999866, "tokens_per_second": 25.624586996219705, "generated_tokens": 64, "output_sha256": "62f5708eba627aa237fb8e78f9b9a4ac194a66289f62b8aaf1e2a6560481f0e8", "utc": "2026-10-17T05:50:34Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 64, "repeat": 2, "use_cache": false, "seconds": 6.169967879999945, "tokens_per_second": 10.37282547409316, "generated_tokens": 64, "output_sha256": "62f5708eba627aa237fb8e78f9b9a4ac194a66289f62b8aaf1e2a6560481f0e8", "utc": "2026-10-17T05:50:41Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 128, "repeat": 2, "use_cache": true, "seconds": 4.938108221999983, "tokens_per_second": 25.920857592739985, "generated_tokens": 128, "output_sha256": "fd64e1c1f59aee58726d4e113a08cbe52a903bc6bd0beabe267539291d697944", "utc": "2026-10-17T05:50:46Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 128, "repeat": 2, "use_cache": false, "seconds": 5.398766303000002, "tokens_per_second": 23.70912034641555, "generated_tokens": 128, "output_sha256": "fd64e1c1f59aee58726d4e113a08cbe52a903bc6bd0beabe267539291d697944", "utc": "2026-10-17T05:50:52Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 128, "repeat": 2, "use_cache": true, "seconds": 4.946189087999869, "tokens_per_second": 25.87850923664554, "generated_tokens": 128, "output_sha256": "6a5c1f19a832eb47e56b5979fceaac475ec5f19b50811161a5007d6d446f4d01", "utc": "2026-10-17T05:50:57Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 128, "repeat": 2, "use_cache": false, "seconds": 13.621415929000023, "tokens_per_second": 9.396967295263904, "generated_tokens": 128, "output_sha256": "6a5c1f19a832eb47e56b5979fceaac475ec5f19b50811161a5007d6d446f4d01", "utc": "2026-10-17T05:51:11Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 256, "repeat": 2, "use_cache": true, "seconds": 9.825991189000206, "tokens_per_second": 26.05335126766463, "generated_tokens": 256, "output_sha256": "727c6da07ff3b4e5307faea271157b521bdd1a89f4865158e9befcea1f7ee4cd", "utc": "2026-10-17T05:51:21Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 256, "repeat": 2, "use_cache": false, "seconds": 11.442772152000089, "tokens_per_second": 22.372201123942997, "generated_tokens": 256, "output_sha256": "727c6da07ff3b4e5307faea271157b521bdd1a89f4865158e9befcea1f7ee4cd", "utc": "2026-10-17T05:51:33Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 256, "repeat": 2, "use_cache": true, "seconds": 9.812203280999938, "tokens_per_second": 26.0899609056929, "generated_tokens": 256, "output_sha256": "824c20bc252d7b569f753a4ad61514fbf0dda23241908b433023c024694c1731", "utc": "2026-10-17T05:51:43Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 256, "repeat": 2, "use_cache": false, "seconds": 31.215890457999876, "tokens_per_second": 8.200951382259653, "generated_tokens": 256, "output_sha256": "824c20bc252d7b569f753a4ad61514fbf0dda23241908b433023c024694c1731", "utc": "2026-10-17T05:52:15Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 512, "repeat": 2, "use_cache": true, "seconds": 19.647003421999898, "tokens_per_second": 26.059953724377312, "generated_tokens": 512, "output_sha256": "c02e696b344159311a98573c0c497958f019a2523e8905eeabf6020c76c52708", "utc": "2026-10-17T05:52:35Z"}
+0.6B {"prompt_tokens": 64, "output_tokens": 512, "repeat": 2, "use_cache": false, "seconds": 31.742948155000022, "tokens_per_second": 16.12956671509895, "generated_tokens": 512, "output_sha256": "c02e696b344159311a98573c0c497958f019a2523e8905eeabf6020c76c52708", "utc": "2026-10-17T05:53:07Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 512, "repeat": 2, "use_cache": true, "seconds": 19.635975217999885, "tokens_per_second": 26.074589844188658, "generated_tokens": 512, "output_sha256": "b56469024ca07ec5dbf9de28170eed41766ca768d0ee8dbf723c78cf2082ef0c", "utc": "2026-10-17T05:53:27Z"}
+0.6B {"prompt_tokens": 512, "output_tokens": 512, "repeat": 2, "use_cache": false, "seconds": 79.54529294600002, "tokens_per_second": 6.436584504724565, "generated_tokens": 512, "output_sha256": "b56469024ca07ec5dbf9de28170eed41766ca768d0ee8dbf723c78cf2082ef0c", "utc": "2026-10-17T05:54:47Z"}
+MODEL COMPLETE 0.6B
+
+UNTIMED MECHANISM CHECK
+`torch_dtype` is deprecated! Use `dtype` instead!
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792216496.247666    5467 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1792216496.319017    5467 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1792216498.794747    5467 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1792216498.795333    5467 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+[
+  {
+    "requested_cache": true,
+    "calls": [
+      {
+        "input_shape": [
+          1,
+          64
+        ],
+        "use_cache": true,
+        "past_present": true,
+        "device": "cuda:0"
+      },
+      {
+        "input_shape": [
+          1,
+          1
+        ],
+        "use_cache": true,
+        "past_present": true,
+        "device": "cuda:0"
+      },
+      {
+        "input_shape": [
+          1,
+          1
+        ],
+        "use_cache": true,
+        "past_present": true,
+        "device": "cuda:0"
+      },
+      {
+        "input_shape": [
+          1,
+          1
+        ],
+        "use_cache": true,
+        "past_present": true,
+        "device": "cuda:0"
+      }
+    ],
+    "output": [
+      840,
+      20772,
+      1246,
+      264,
+      6733,
+      2872,
+      4756,
+      6467,
+      13,
+      60785,
+      35210,
+      11,
+      16403,
+      1137,
+      11,
+      12726,
+      11,
+      323,
+      52575,
+      304,
+      2797,
+      4128,
+      13,
+      220,
+      840,
+      20772,
+      1246,
+      264,
+      6733,
+      2872,
+      4756,
+      6467,
+      13,
+      60785,
+      35210,
+      11,
+      16403,
+      1137,
+      11,
+      12726,
+      11,
+      323,
+      52575,
+      304,
+      2797,
+      4128,
+      13,
+      220,
+      840,
+      20772,
+      1246,
+      264,
+      6733,
+      2872,
+      4756,
+      6467,
+      13,
+      60785,
+      35210,
+      11,
+      16403,
+      1137,
+      11,
+      12726,
+      11,
+      323,
+      52575,
+      304
+    ]
+  },
+  {
+    "requested_cache": false,
+    "calls": [
+      {
+        "input_shape": [
+          1,
+          64
+        ],
+        "use_cache": false,
+        "past_present": false,
+        "device": "cuda:0"
+      },
+      {
+        "input_shape": [
+          1,
+          65
+        ],
+        "use_cache": false,
+        "past_present": false,
+        "device": "cuda:0"
+      },
+      {
+        "input_shape": [
+          1,
+          66
+        ],
+        "use_cache": false,
+        "past_present": false,
+        "device": "cuda:0"
+      },
+      {
+        "input_shape": [
+          1,
+          67
+        ],
+        "use_cache": false,
+        "past_present": false,
+        "device": "cuda:0"
+      }
+    ],
+    "output": [
+      840,
+      20772,
+      1246,
+      264,
+      6733,
+      2872,
+      4756,
+      6467,
+      13,
+      60785,
+      35210,
+      11,
+      16403,
+      1137,
+      11,
+      12726,
+      11,
+      323,
+      52575,
+      304,
+      2797,
+      4128,
+      13,
+      220,
+      840,
+      20772,
+      1246,
+      264,
+      6733,
+      2872,
+      4756,
+      6467,
+      13,
+      60785,
+      35210,
+      11,
+      16403,
+      1137,
+      11,
+      12726,
+      11,
+      323,
+      52575,
+      304,
+      2797,
+      4128,
+      13,
+      220,
+      840,
+      20772,
+      1246,
+      264,
+      6733,
+      2872,
+      4756,
+      6467,
+      13,
+      60785,
+      35210,
+      11,
+      16403,
+      1137,
+      11,
+      12726,
+      11,
+      323,
+      52575,
+      304
+    ]
+  }
+]
+
+STOP
+[colab] Stopping session 'b6-121'...
+[colab] Session terminated.
+
+COST
+{
+  "gpu": "NVIDIA L4",
+  "created_utc": "2026-10-17T05:37:19.049052+00:00",
+  "stopped_utc": "2026-10-17T05:55:28.978557+00:00",
+  "session_seconds": 1089.929505,
+  "inferred_session_cu_per_hour": 1.54,
+  "estimated_session_cu": 0.4662476215833334,
+  "account_balance_before": 163.67,
+  "account_balance_after": 162.84,
+  "account_cu_delta": 0.83,
+  "attribution": "Session CU is estimated from lifecycle duration and the account rate drop after stopping b6-121. Shared-account balance delta includes another assignment; exact per-session metering is not exposed.",
+  "stopped": true
+}

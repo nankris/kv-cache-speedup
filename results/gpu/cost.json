@@ -1,0 +1,13 @@
+{
+  "gpu": "NVIDIA L4",
+  "created_utc": "2026-10-17T05:37:19.049052+00:00",
+  "stopped_utc": "2026-10-17T05:55:28.978557+00:00",
+  "session_seconds": 1089.929505,
+  "inferred_session_cu_per_hour": 1.54,
+  "estimated_session_cu": 0.4662476215833334,
+  "account_balance_before": 163.67,
+  "account_balance_after": 162.84,
+  "account_cu_delta": 0.83,
+  "attribution": "Session CU is estimated from lifecycle duration and the account rate drop after stopping b6-121. Shared-account balance delta includes another assignment; exact per-session metering is not exposed.",
+  "stopped": true
+}

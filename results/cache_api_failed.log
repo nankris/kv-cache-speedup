@@ -1,0 +1,16 @@
+Loading model
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights:   0%|          | 1/311 [00:00<01:32,  3.35it/s]Loading weights:  12%|█▏        | 38/311 [00:00<00:02, 120.02it/s]Loading weights:  23%|██▎       | 72/311 [00:00<00:01, 184.26it/s]Loading weights:  33%|███▎      | 103/311 [00:00<00:00, 222.17it/s]Loading weights:  44%|████▍     | 138/311 [00:00<00:00, 243.11it/s]Loading weights:  59%|█████▊    | 182/311 [00:00<00:00, 299.01it/s]Loading weights:  72%|███████▏  | 224/311 [00:00<00:00, 320.36it/s]Loading weights:  83%|████████▎ | 259/311 [00:01<00:00, 280.51it/s]Loading weights:  93%|█████████▎| 290/311 [00:01<00:00, 269.78it/s]Loading weights: 100%|██████████| 311/311 [00:01<00:00, 234.79it/s]
+Loaded RSS KiB 5127320
+Warmup True
+Warmup done True
+Warmup False
+Warmup done False
+Traceback (most recent call last):
+  File "/workspace/work/tig/121-kv-cache-speedup/scripts/benchmark.py", line 36, in <module>
+    memory.append(dict(tokens=p,formula_bytes=formula,tensor_bytes=sum(t.numel()*t.element_size() for t in tensors),storage_bytes=sum(t.untyped_storage().nbytes() for t in tensors),key_shape=list(tensors[0].shape),value_shape=list(tensors[1].shape)))
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/work/tig/121-kv-cache-speedup/scripts/benchmark.py", line 36, in <genexpr>
+    memory.append(dict(tokens=p,formula_bytes=formula,tensor_bytes=sum(t.numel()*t.element_size() for t in tensors),storage_bytes=sum(t.untyped_storage().nbytes() for t in tensors),key_shape=list(tensors[0].shape),value_shape=list(tensors[1].shape)))
+                                                                       ^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'numel'

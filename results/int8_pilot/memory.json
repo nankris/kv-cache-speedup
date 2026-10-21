@@ -1,0 +1,38 @@
+[
+  {
+    "tokens": 64,
+    "formula_bytes": 14680064,
+    "tensor_bytes": 14680064,
+    "storage_bytes": 14680064,
+    "key_shape": [
+      1,
+      8,
+      64,
+      128
+    ],
+    "value_shape": [
+      1,
+      8,
+      64,
+      128
+    ]
+  },
+  {
+    "tokens": 512,
+    "formula_bytes": 117440512,
+    "tensor_bytes": 117440512,
+    "storage_bytes": 117440512,
+    "key_shape": [
+      1,
+      8,
+      512,
+      128
+    ],
+    "value_shape": [
+      1,
+      8,
+      512,
+      128
+    ]
+  }
+]

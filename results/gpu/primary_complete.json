@@ -1,0 +1,5 @@
+{
+  "primary_complete": true,
+  "optional_model": "not run: FP32 primary timings imply larger-model full matrix is not quick",
+  "utc": "2026-10-17T05:54:50Z"
+}

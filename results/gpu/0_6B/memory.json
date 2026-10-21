@@ -1,0 +1,87 @@
+[
+  {
+    "tokens": 64,
+    "formula_bytes": 14680064,
+    "tensor_bytes": 14680064,
+    "storage_bytes": 14680064,
+    "baseline_bytes": 2393249280,
+    "live_bytes": 2408537088,
+    "delta_bytes": 15287808,
+    "peak_bytes": 2411681792,
+    "reserved_bytes": 2426404864,
+    "key_shape": [
+      1,
+      8,
+      64,
+      128
+    ]
+  },
+  {
+    "tokens": 319,
+    "formula_bytes": 73170944,
+    "tensor_bytes": 73170944,
+    "storage_bytes": 73170944,
+    "baseline_bytes": 2393251328,
+    "live_bytes": 2467918848,
+    "delta_bytes": 74667520,
+    "peak_bytes": 2497081344,
+    "reserved_bytes": 2512388096,
+    "key_shape": [
+      1,
+      8,
+      319,
+      128
+    ]
+  },
+  {
+    "tokens": 512,
+    "formula_bytes": 117440512,
+    "tensor_bytes": 117440512,
+    "storage_bytes": 117440512,
+    "baseline_bytes": 2393252864,
+    "live_bytes": 2511301120,
+    "delta_bytes": 118048256,
+    "peak_bytes": 2573096448,
+    "reserved_bytes": 2585788416,
+    "key_shape": [
+      1,
+      8,
+      512,
+      128
+    ]
+  },
+  {
+    "tokens": 767,
+    "formula_bytes": 175931392,
+    "tensor_bytes": 175931392,
+    "storage_bytes": 175931392,
+    "baseline_bytes": 2393254912,
+    "live_bytes": 2569794048,
+    "delta_bytes": 176539136,
+    "peak_bytes": 2692486144,
+    "reserved_bytes": 2736783360,
+    "key_shape": [
+      1,
+      8,
+      767,
+      128
+    ]
+  },
+  {
+    "tokens": 1023,
+    "formula_bytes": 234651648,
+    "tensor_bytes": 234651648,
+    "storage_bytes": 234651648,
+    "baseline_bytes": 2393256960,
+    "live_bytes": 2628733440,
+    "delta_bytes": 235476480,
+    "peak_bytes": 2830492160,
+    "reserved_bytes": 2858418176,
+    "key_shape": [
+      1,
+      8,
+      1023,
+      128
+    ]
+  }
+]

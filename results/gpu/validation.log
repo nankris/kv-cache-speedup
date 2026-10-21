@@ -1,0 +1,2 @@
+0_6B : 60 rows; all saved token IDs and hashes match; memory formula exact
+Mechanism: cache reuses prefix; no-cache recomputes growing prefix

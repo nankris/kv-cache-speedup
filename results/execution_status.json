@@ -1,0 +1,10 @@
+{
+  "recorded_utc": "2026-10-16T09:49:29Z",
+  "observed_oom_kills": 2,
+  "scope": "session cgroup",
+  "note": "Both observed OOM kills corresponded to int8 setup attempts; final int8 attempt was manually interrupted after two completed pilot timings.",
+  "cpu_only": true,
+  "colab_cu": 0,
+  "resumed_run_first_timed_completion_utc": "2026-10-16T09:15:44Z",
+  "timing_note": "Prior script/protocol files pre-existed; no exact start time was observed for that earlier attempt."
+}

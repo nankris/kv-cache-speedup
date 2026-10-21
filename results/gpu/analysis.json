@@ -1,0 +1,23 @@
+{
+  "endpoints": [
+    {
+      "model": "Qwen3-0.6B",
+      "slowdown": 1.9293395661199073,
+      "ci_low": 1.9210630538383289,
+      "ci_high": 1.9422375980490196,
+      "repeat_ratios": [
+        1.9422375980490196,
+        1.9210630538383289,
+        1.9247841579949254
+      ],
+      "verdict": "DISPROVEN"
+    }
+  ],
+  "checks": [
+    {
+      "model": "Qwen3-0.6B",
+      "rows": 60,
+      "all_outputs_identical": true
+    }
+  ]
+}

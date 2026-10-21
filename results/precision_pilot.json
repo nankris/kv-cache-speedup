@@ -1,0 +1,38 @@
+[
+  {
+    "dtype": "torch.float32",
+    "prompt_tokens": 64,
+    "repeat": 0,
+    "seconds": 3.714586987999951
+  },
+  {
+    "dtype": "torch.float32",
+    "prompt_tokens": 64,
+    "repeat": 1,
+    "seconds": 3.9646406499999785
+  },
+  {
+    "dtype": "torch.float32",
+    "prompt_tokens": 512,
+    "repeat": 0,
+    "seconds": 18.47743867400004
+  },
+  {
+    "dtype": "torch.float32",
+    "prompt_tokens": 512,
+    "repeat": 1,
+    "seconds": 19.000158798999905
+  },
+  {
+    "dtype": "torch.bfloat16",
+    "prompt_tokens": 64,
+    "repeat": 0,
+    "seconds": 12.003482219000034
+  },
+  {
+    "dtype": "torch.bfloat16",
+    "prompt_tokens": 64,
+    "repeat": 1,
+    "seconds": 14.770411343000092
+  }
+]

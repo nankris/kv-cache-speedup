@@ -1,0 +1,15 @@
+Matplotlib is building the font cache; this may take a moment.
+{
+  "verdict": "INCONCLUSIVE",
+  "reason": "256-token endpoint not measured; feasibility failure",
+  "headline_number": null,
+  "ci95": null,
+  "completed_runs": 3,
+  "required_runs": 48,
+  "completed_256_token_runs": 0,
+  "pilot_32_token_ratio": 6.211420822198655,
+  "pilot_output_hashes_match": true,
+  "fits": null,
+  "gpu": null,
+  "colab_cu": 0
+}

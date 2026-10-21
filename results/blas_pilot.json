@@ -1,0 +1,32 @@
+[
+  {
+    "threads": 1,
+    "repeat": 0,
+    "seconds": 0.17252018899989707
+  },
+  {
+    "threads": 1,
+    "repeat": 1,
+    "seconds": 0.15071701100009705
+  },
+  {
+    "threads": 1,
+    "repeat": 2,
+    "seconds": 0.1465233649998936
+  },
+  {
+    "threads": 2,
+    "repeat": 0,
+    "seconds": 0.1654538949999278
+  },
+  {
+    "threads": 2,
+    "repeat": 1,
+    "seconds": 0.19123657399995864
+  },
+  {
+    "threads": 2,
+    "repeat": 2,
+    "seconds": 0.18014496099999633
+  }
+]
