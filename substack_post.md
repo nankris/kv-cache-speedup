@@ -51,4 +51,4 @@ What to try next
 
 Repeat on BF16 with a fixed kernel, try longer contexts (4K and up), test batch sizes above 1, and compare a bigger model where attention is a larger share of the work.
 
-All code and raw results are in the experiment folder. If you want more measured tests like this, subscribe to Tech in General.
+All code and raw results are in this repo. If you want more measured tests like this, subscribe to Tech in General.

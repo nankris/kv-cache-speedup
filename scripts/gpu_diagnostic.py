@@ -4,7 +4,7 @@ os.environ['TOKENIZERS_PARALLELISM']='false'
 import json,torch,transformers
 from pathlib import Path
 from transformers import AutoModelForCausalLM
-R=Path('/content/exp121/results/gpu'); d=R/'0_6B'
+R=Path('/content/kvcache/results/gpu'); d=R/'0_6B'
 meta=json.loads((d/'environment.json').read_text())
 torch.set_num_threads(2)
 torch.backends.cuda.matmul.allow_tf32=False

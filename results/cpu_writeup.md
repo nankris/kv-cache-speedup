@@ -56,4 +56,4 @@ Public model and synthetic prompts only; no chat template, EOS stopping disabled
 
 ## Two-sentence plain-English takeaway
 
-The short pilot showed a clear speed benefit from remembering earlier attention data, but this run did not finish the 256-token comparison needed for the post’s headline. We did verify the memory cost: this model stores 224 KiB of float32 attention data per cached token.
+The short pilot showed a clear speed benefit from remembering earlier attention data, but this run did not finish the 256-token comparison needed for the headline. We did verify the memory cost: this model stores 224 KiB of float32 attention data per cached token.

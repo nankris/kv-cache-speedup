@@ -1,10 +1,10 @@
 """Run the untimed mechanism check immediately after the primary benchmark."""
 from pathlib import Path
 import subprocess
-root=Path('/content/exp121')
+root=Path('/content/kvcache')
 code='''from pathlib import Path
 import subprocess,time,json
-root=Path('/content/exp121')
+root=Path('/content/kvcache')
 while not (root/'results/gpu/primary_complete.json').exists(): time.sleep(1)
 with (root/'diagnostic.log').open('w') as f:
     p=subprocess.run(['python','-u',str(root/'scripts/gpu_diagnostic.py')],stdout=f,stderr=subprocess.STDOUT)

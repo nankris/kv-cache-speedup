@@ -19,7 +19,7 @@ The headline is Qwen3-0.6B on one NVIDIA L4, FP32 SDPA with TF32 disabled: the g
 | Qwen3-0.6B | 512 | 256 | 9.82 | 31.42 | 26.1 | 8.1 | 3.199 [3.173, 3.242] |
 | Qwen3-0.6B | 512 | 512 | 19.65 | 79.60 | 26.1 | 6.4 | 4.052 [4.045, 4.061] |
 
-Times and tokens/s are arithmetic means; slowdown is the geometric mean of paired time ratios. CIs resample the three repeats. Use figures/table.png for publication.
+Times and tokens/s are arithmetic means; slowdown is the geometric mean of paired time ratios. CIs resample the three repeats. The same table is in figures/table.png.
 
 ## Primary endpoint
 
@@ -76,4 +76,4 @@ Exact primary setup: Python 3.13.15, PyTorch 2.11.0+cu130, Transformers 4.57.1, 
 
 For this model, KV bytes/token = 28 layers × 8 KV heads × 128 head dimensions × 2 × 4 bytes = 229,376 bytes = 224 KiB/token. The generation-time cache at 256 output tokens therefore occupies 69.78 MiB for a 64-token prompt and 167.78 MiB for a 512-token prompt; the direct-forward memory checks measure these same context lengths.
 
-GPU and cost: NVIDIA L4, stopped after 18.17 minutes. Estimated session usage **0.47 CU** from the observed 1.54 CU/hour account-rate drop on stopping this session. Account balance declined by 0.83 CU (163.67 → 162.84); another concurrent assignment makes that a shared-account total, not this experiment’s exact bill. Exact per-session CU metering was unavailable. Lifecycle timestamps, balance excerpts and the estimate are saved in results/gpu/.
+GPU and cost: NVIDIA L4, stopped after 18.17 minutes. Estimated session usage **0.47 CU** from the observed 1.54 CU/hour account-rate drop on stopping this session. Account balance declined by 0.83 CU (163.67 → 162.84); another job running on the same account makes that a shared-account total, not this experiment’s exact bill. Exact per-session CU metering was unavailable. Lifecycle timestamps, balance excerpts and the estimate are saved in results/gpu/.

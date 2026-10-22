@@ -1,6 +1,7 @@
 import ctypes,time,json
 from pathlib import Path
-lib=ctypes.CDLL('/workspace/tools/mlenv/lib/python3.12/site-packages/torch/lib/libopenblas.so.0')
+import os,torch
+lib=ctypes.CDLL(os.environ.get('OPENBLAS_LIB',os.path.join(os.path.dirname(torch.__file__),'lib','libopenblas.so.0')))
 m,n,k=512,3072,1024
 A=(ctypes.c_float*(m*k))();B=(ctypes.c_float*(k*n))();C=(ctypes.c_float*(m*n))()
 rows=[]

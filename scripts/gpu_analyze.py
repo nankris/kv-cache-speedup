@@ -68,7 +68,7 @@ for ax,model in zip(axs[0],models):
     ax.plot(g.tokens,g.formula_bytes/2**20,'-',lw=3,label='KV formula'); ax.scatter(g.tokens,g.tensor_bytes/2**20,marker='o',s=45,label='Live KV tensor bytes'); ax.scatter(g.tokens,g.delta_bytes/2**20,marker='x',s=60,label='CUDA allocation increase')
     ax.set(title=f'{model} · L4 · FP32',xlabel='Cached context tokens',ylabel='Memory (MiB)'); ax.legend(fontsize=9); ax.grid(alpha=.2)
 fig.suptitle('FP32 cache memory: formula versus measured CUDA allocation'); fig.tight_layout(); fig.savefig(F/'memory.png'); plt.close(fig)
-# Complete main results table as an image for Substack.
+# Complete main results table as an image for the write-up.
 labels=['Model','Prompt','Output','On (s)','Off (s)','On tok/s','Off tok/s','Slowdown [95% CI]']
 rows=[]
 for r in summary:
@@ -83,7 +83,7 @@ ax.set_title(f"L4 · FP32 · batch 1 · greedy · mean of 3 repeats\n256-token c
 e=endpoints[0]
 lines=[f"# Turning off the KV cache made the model {e['slowdown']:.2f}× slower at 256 tokens",'',f"**Verdict: {e['verdict']} for the ≥5× hypothesis. Headline number: {e['slowdown']:.2f}×** (95% paired bootstrap CI {e['ci_low']:.2f}–{e['ci_high']:.2f}×).",'', 'The headline is Qwen3-0.6B on one NVIDIA L4, FP32 SDPA with TF32 disabled: the geometric mean of two prompt-length ratios within each repeat, then across three repeats. Each timing includes prompt prefill and greedy decoding; outputs have fixed lengths. The upper CI bound falls below the predeclared 5× threshold.', '', '## Main results', '', '| Model | Prompt | Output | Cache on s | Cache off s | On tok/s | Off tok/s | Slowdown [95% CI] |','|---|---:|---:|---:|---:|---:|---:|---:|']
 for row in rows: lines.append('| '+' | '.join(row)+' |')
-lines+=['','Times and tokens/s are arithmetic means; slowdown is the geometric mean of paired time ratios. CIs resample the three repeats. Use figures/table.png for publication.','', '## Primary endpoint','']
+lines+=['','Times and tokens/s are arithmetic means; slowdown is the geometric mean of paired time ratios. CIs resample the three repeats. The same table is in figures/table.png.','', '## Primary endpoint','']
 for e in endpoints: lines.append(f"- {e['model']}: {e['slowdown']:.2f}× [{e['ci_low']:.2f}, {e['ci_high']:.2f}], {e['verdict']}; paired repeat endpoints {', '.join(f'{v:.3f}' for v in e['repeat_ratios'])}.")
 lines+=['',f"All 60 rows per model completed. Exact generated-token hashes match across both modes and all repeats in every cell: {all(c['all_outputs_identical'] for c in checks)}. Token ID files are retained for independent checking.",'','## Growth fits','','| Model | Prompt | Cache | Linear R² / LOO RMSE s | Quadratic R² / LOO RMSE s | Log-log slope |','|---|---:|---|---:|---:|---:|']
 for model in models:
@@ -108,4 +108,4 @@ with (ROOT/'writeup.md').open('a') as f:
 if (R/'cost.json').exists():
     cost=json.loads((R/'cost.json').read_text())
     with (ROOT/'writeup.md').open('a') as f:
-        f.write(f"\nGPU and cost: {cost['gpu']}, stopped after {cost['session_seconds']/60:.2f} minutes. Estimated session usage **{cost['estimated_session_cu']:.2f} CU** from the observed 1.54 CU/hour account-rate drop on stopping this session. Account balance declined by {cost['account_cu_delta']:.2f} CU ({cost['account_balance_before']:.2f} → {cost['account_balance_after']:.2f}); another concurrent assignment makes that a shared-account total, not this experiment’s exact bill. Exact per-session CU metering was unavailable. Lifecycle timestamps, balance excerpts and the estimate are saved in results/gpu/.\n")
+        f.write(f"\nGPU and cost: {cost['gpu']}, stopped after {cost['session_seconds']/60:.2f} minutes. Estimated session usage **{cost['estimated_session_cu']:.2f} CU** from the observed 1.54 CU/hour account-rate drop on stopping this session. Account balance declined by {cost['account_cu_delta']:.2f} CU ({cost['account_balance_before']:.2f} → {cost['account_balance_after']:.2f}); another job running on the same account makes that a shared-account total, not this experiment’s exact bill. Exact per-session CU metering was unavailable. Lifecycle timestamps, balance excerpts and the estimate are saved in results/gpu/.\n")

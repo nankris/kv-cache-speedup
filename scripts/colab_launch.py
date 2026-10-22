@@ -1,7 +1,7 @@
 """Start the uploaded benchmark once; rerunning resumes completed cells."""
 from pathlib import Path
 import os,subprocess
-p=Path('/content/exp121/scripts'); p.mkdir(parents=True,exist_ok=True)
+p=Path('/content/kvcache/scripts'); p.mkdir(parents=True,exist_ok=True)
 script=p/'gpu_benchmark.py'; pidfile=p.parent/'benchmark.pid'
 if not script.exists():
     print('Created directories; upload benchmark next')
